@@ -39,3 +39,16 @@
 <%100.times do %>
     <%=  'chunky bacun' %></br>
   <%end%>
+  
+  <%average_price = (Product.average(:price)).round(2) %>
+  <%= "The average price is #{average_price}" %></br>
+    
+  <% max_price = (Product.maximum(:price)).round(2) %>
+  <%= "The maximum  price is #{max_price}" %></br>
+    
+  <%num_unique_products = Product.count %>
+  <%= "The number of unique products is #{num_unique_products}" %></br>
+    
+  <%total_stock = Product.sum(:stock_quantity) %>
+  <%= "The quantity of stock summed over all items is #{total_stock}" %></br>
+    
